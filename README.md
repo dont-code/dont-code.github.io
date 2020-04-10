@@ -1,2 +1,2 @@
-# dont-code-app.github.io
+# dont-code.github.io
 Public website for Dont-Code
