@@ -4,7 +4,7 @@ description         : >-
                       "My applications developed automatically."
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : dont-code/dont-code.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
-remote_theme        : YoussefRaafatNasry/portfolYOU
+theme: jekyll-theme-slate
 
 
 ### Plugins ###
