@@ -2,7 +2,7 @@ Soon, a framework for building applications
 without coding at all
 
 # What is it ?
-Create the exact application you need without techincal knowledge. The simpliest way to get what you need.
+Create the exact application you need without technical knowledge. The simplest way to get what you need.
 
 
 # how is it working ?
@@ -25,5 +25,6 @@ Right now, you can see the working behavior of the dont-code app by
 - Changing the app title
 - Seeing the menus reflecting the items you want to use in your application
 
-Opensource, dont-code is a framework.
+Opensource, dont-code is a framework extensible through plugins.
 Developers from anywhere can provide plugins and extend the functionalities offered.
+Follow the developer's page to see how you can 
