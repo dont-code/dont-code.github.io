@@ -6,5 +6,24 @@ Create the exact application you need without techincal knowledge. The simpliest
 
 
 # how is it working ?
+**It provides an Application builder**
+![Image](assets/Application%20Builder.png)
+with pre-defined questions.
 
-blah blah
+Filling up the values let you express what you want to do with the application.
+
+
+**It provides as well a Preview Application**
+![Previewer](assets/Preview.png)
+that shows you in realtime the result of your changes.
+
+# What is this status
+Dont-Code is still in infancy, but you can already play a bit with it.
+Go to the [Application Builder url](https://dont-code.github.io/ide-ui/), and follow the instructions !
+
+Right now, you can see the working behavior of the dont-code app by
+- Changing the app title
+- Seeing the menus reflecting the items you want to use in your application
+
+Opensource, dont-code is a framework.
+Developers from anywhere can provide plugins and extend the functionalities offered.
