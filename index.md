@@ -1,5 +1,6 @@
-Soon, a framework for building applications
-without coding at all
+A framework for building applications
+without coding at all.
+[Play with a demo!](https://dont-code.github.io/ide-ui/)
 
 # What is it ?
 Create the exact application you need without technical knowledge. The simplest way to get what you need.
