@@ -5,7 +5,13 @@ description         : >-
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : dont-code/dont-code.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme : mmistakes/so-simple-theme
+logo: "/assets/logo.png"
 
+google_fonts:
+  - name: "Source Sans Pro"
+    weights: "400,400i,700,700i"
+  - name: "Lora"
+    weights: "400,400i,700,700i"
 
 ### Plugins ###
 plugins:
@@ -17,3 +23,12 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+# Site Author
+author:
+  name: Dont-Code Team
+  email: dont-code@appliweb.net
+  links:
+    - title: GitHub
+      url: https://github.com/dont-code
+      icon: fab fa-github-square
