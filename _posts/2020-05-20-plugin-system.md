@@ -54,6 +54,6 @@ Of course, this is quite complex as you must allow changes in the core of the fr
 ``` 
 ###### The result is this:
 
-![Builder showing type list from a plugin](../assets/builder-with-type-from-plugin.png)
+![Builder showing type list from a plugin](/assets/builder-with-type-from-plugin.png)
 
 Of course, it is placed only at the end for now, it should as well replace the other options of screens, but it's a start.
