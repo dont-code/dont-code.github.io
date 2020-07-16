@@ -21,8 +21,8 @@ Of course, this is quite complex as you must allow changes in the core of the fr
 - [x] Create a [core library](https://github.com/dont-code/core), linking together the [Builder](https://github.com/dont-code/ide-ui), the [Previewer](https://github.com/dont-code/preview-ui) and the [Plugins](https://github.com/dont-code/plugins)
 - [x] Enable plugins to register to core
 - [x] Re-write partially the Builder to support dynamic schema as it is being updated by plugins
-- [ ] Tidy up the editor to enable options overloading and reordering
-- [ ] Enable the plugin to register with the Previewer
+- [x] Tidy up the editor to enable options overloading and reordering
+- [x] Enable the plugin to register with the Previewer
  
 ## It is starting to work now
 
