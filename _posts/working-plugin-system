@@ -13,10 +13,17 @@ A quick update as the plugin framework is now working
 We achieved quite a big step last week as the dont-code framework now supports loading plugins dynamically.
 It supports two typea of plugins:
 
-- The plugins can modify the behavior of the [Builder](https://github.com/dont-code/ide-ui). It can modify the model used by dont-code to describe an application. Then the builder will automatically adapt 
+- The plugins can modify the behavior of the [Builder](https://github.com/dont-code/ide-ui). It can modify the model used by dont-code to describe an application, then the builder automatically adapts the questions to support it.
+For example, the [test screen plugin]() adds the type field to the screen, and changes the screen proe
+Perty dynamically when selected.
+See the [before] and [after] comparison.
 
-2. The [Previewer](https://github.com/dont-code/preview-ui) is where you see the result in realtime. It is connected to the Builder and reacts automatically to editions you make in the Builder
-It is running in Angular + [Kor UI](https://github.com/eduferfer/kor)
+- As well plugins can enhance the [Previewer](https://github.com/dont-code/preview-ui) by registering to display any items in the model.
+Dynamically the previewer will call the registered plugin and push any information to it.
+
+Of course you can combine both in a single plugin, allowing you to add or modify any item in the editor and handle its display in the previewer !
+
+To further enhance the plugin framework and make sure it is performant enough, even the core ui components of the previewer will be developed as plugins. You can find the basic ones in the following [repository]()
 
 For example, 
 - start the [Builder demo](https://dont-code.github.io/ide-ui/), then have it open the Previewer
