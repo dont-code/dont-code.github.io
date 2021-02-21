@@ -56,6 +56,6 @@ For example, a plugin can add a list of options named 'type' to the editor by re
 ``` 
 ## The result is this:
 
-![Builder showing type list from a plugin](/assets/builder-with-type-from-plugin.png)
+![Builder showing type list from a plugin](/assets/builder%20with%20type%20from%20plugin.png)
 
 Of course, it is placed only at the end for now, it should as well replace the other options of screens, but it's a start.
