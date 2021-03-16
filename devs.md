@@ -2,19 +2,30 @@
 title: For Developers
 ---
 
-## how is it working ?
-**It provides an Application builder**
-![Image](/assets/Application%20Builder.png)
-with pre-defined questions.
+## how the project is organized ?
+The framework is organized into multiple repositories in [Github](https://github.com/dont-code).
 
-Filling up the values let you express what you want to do with the application.
+- [Core](https://github.com/dont-code/core):
+  A pure typescript library, deployed in npm as [@dontcode/core](https://www.npmjs.com/package/@dontcode/core).
+  It provides the common application schema and api to manage an extensible application design platform based on realtime messages.
+  It only has a dependency to Rxjs, so it can be used with any UI framework.
+- [Ide-ui](https://github.com/dont-code/ide-ui):
+  An Angular application that reads the application schema, potentially extended by plugins, and provides a means for the user to describe their applications based on this schema.
+  It displays a set of questions, and pushes change messages each time the user make an answer 
+- [Preview-ui](https://github.com/dont-code/preview-ui):
+  An Angular application listening to these change messages and showing results in realtime.
+  It provides as well a debugger page for emulating changes and testing your plugin:
+  ![Previewer Debug](/assets/Previewer%20with%20debug%20page.png)
+- [Plugins](https://github.com/dont-code/plugins):
+  Contains multiple plugins and a common library to support them. You can use this as an example on how to develop plugins for Dont-code
+- [Ide-Services](https://github.com/dont-code/ide-services):
+  The Ide-ui connects to this service to push change messages, and this service will store them. For now, it's sending them to the Preview-Service.
+  Developed in Java / [Quarkus](https://www.quarkus.io)
+- [Preview-Services](https://github.com/dont-code/preview-services):
+  The Preview-ui connects to this service to receive the change messages.
+  Developed in Java / [Quarkus](https://www.quarkus.io)
+ 
 
-
-**It provides as well a Preview Application**
-that shows you in realtime the result of your changes.
-![Previewer](/assets/Preview.png)
-As well a Debuger window allowing you to test your plugin:
-![Previewer Debug](/assets/Previewer%20with%20debug%20page.png)
 ## Plugin system
 Dont-code only provides the core system, with extensive support for plugins.
 
