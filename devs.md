@@ -14,7 +14,7 @@ Filling up the values let you express what you want to do with the application.
 that shows you in realtime the result of your changes.
 ![Previewer](/assets/Preview.png)
 As well a Debuger window allowing you to test your plugin:
-![Previewer Debug](assets/Previewer%20with%20debug%20page.png)
+![Previewer Debug](/assets/Previewer%20with%20debug%20page.png)
 ## Plugin system
 Dont-code only provides the core system, with extensive support for plugins.
 
