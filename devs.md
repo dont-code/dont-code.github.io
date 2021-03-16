@@ -1,7 +1,8 @@
-For developers
+---
+title: For Developers
+---
 
-
-# how is it working ?
+## how is it working ?
 **It provides an Application builder**
 ![Image](/assets/Application%20Builder.png)
 with pre-defined questions.
@@ -10,10 +11,11 @@ Filling up the values let you express what you want to do with the application.
 
 
 **It provides as well a Preview Application**
-![Previewer](/assets/Preview.png)
 that shows you in realtime the result of your changes.
-
-# Plugin system
+![Previewer](/assets/Preview.png)
+As well a Debuger window allowing you to test your plugin:
+![Previewer Debug](assets/Previewer%20with%20debug%20page.png)
+## Plugin system
 Dont-code only provides the core system, with extensive support for plugins.
 
 With version 1.0 of the project, one could write a plugin for:
@@ -24,7 +26,7 @@ With version 1.0 of the project, one could write a plugin for:
 - [ ] Provide new Datastorage, extending the server-side storage capabilities
 
 
-# How can I help?
+## How can I help?
 If you believe in this project, there are several ways you could help.
 Well all areas need help... 
 

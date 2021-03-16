@@ -1,11 +1,11 @@
 An opensource framework for low-code, no-code application generation.
 
-# What is it ?
+## What is it ?
 - Users are guided by the framework to create their applications.
 - Developers can extend the platform by adding plugins.
 
 
-# How is it working ?
+## How is it working ?
 **It consists of an Application builder where you describe your application:**
 ![Image](assets/Builder%20define%20Task%20Application.png)
 
@@ -13,7 +13,7 @@ An opensource framework for low-code, no-code application generation.
 ![Previewer Edit](assets/Previewer%20Edit%20Task.png)
 ![Previewer List](assets/Previewer%20List%20Tasks.png)
 
-# What is its status ?
+## What is its status ?
 Dont-Code is still in infancy, but you can already play a bit with it.
 You can try here: [Application Builder Demo](https://dont-code.github.io/ide-ui/), and follow the instructions !
 
