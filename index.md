@@ -1,9 +1,10 @@
-A work in progress framework for building applications without coding.
+An opensource framework for low-code, no-code application generation.
 
 [Play with a demo!](https://dont-code.github.io/ide-ui/)
 
 # What is it ?
-Create the application you need without technical knowledge. This is simplest way to get what you need.
+- Users are guided by the framework to create their applications.
+- Developers can extend the platform by adding plugins.
 
 
 # how is it working ?
