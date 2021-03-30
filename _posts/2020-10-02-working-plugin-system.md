@@ -14,7 +14,7 @@ We achieved quite a big step last week as the dont-code framework now supports l
 It supports two types of plugins:
 
 - The plugins can modify the behavior of the [Builder](https://github.com/dont-code/ide-ui). It can modify the model used by dont-code to describe an application, then the builder automatically adapts the questions to support it.
-For example, the [test screen plugin](https://github.com/dont-code/plugins/libs/screen) adds the type field to the screen, and changes editor fields dynamically when selected.
+For example, the [test screen plugin](https://github.com/dont-code/plugins/tree/master/libs/screen) adds the type field to the screen, and changes editor fields dynamically when selected.
 
 See the video screenshots of this behavior:
   

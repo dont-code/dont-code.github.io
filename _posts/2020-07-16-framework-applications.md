@@ -18,10 +18,10 @@ It is running in Angular + Angular Material
 ![Screenshot](/assets/Application%20Builder.png)
 
 2. The [Previewer](https://github.com/dont-code/preview-ui) is where you see the result in realtime. It is connected to the Builder and reacts automatically to editions you make in the Builder
-It is running in Angular + [Kor UI](https://github.com/eduferfer/kor)
+It is running in Angular + [PrimeNG UI](https://www.primefaces.org/primeng/)
 
 For example, 
-- start the [Builder demo](https://dont-code.github.io/ide-ui/), then have it open the Previewer
+- Start the [Builder demo](https://dont-code.net/ide-ui/), then have it open the Previewer
 ![by clicking here](/assets/Builder%20open%20Previewer.png)
 - The previewer opens with default screen 
 ![Previewer default](/assets/Previewer%20just%20opened.png)

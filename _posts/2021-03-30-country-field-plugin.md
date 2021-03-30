@@ -12,7 +12,7 @@ tags:
 How to manage countries with the no-code platform?
 <!--more-->
 
-We're happy to announce that a new plugin has been developed: The [Fields Plugin](https://github.com/dont-code/plugins/libs/fields) provides a way to view / edit a Country.
+We're happy to announce that a new plugin has been developed: The [Fields Plugin](https://github.com/dont-code/plugins/tree/master/libs/fields) provides a way to view / edit a Country.
 It is now enabled by default in the Builder and the Previewer.
 
 In the Builder, you can create a field of type Country: 
@@ -29,4 +29,4 @@ and the values are displayed nicely with the flag in the list of elements:
 
 You can see that with the power of the dont-code platform, a plugin developed once can be reused to any application.
 
-By the way, the source code of [Fields Plugin in Github](https://github.com/dont-code/plugins/libs/fields) is a great way to see how to develop a plugin for the dont-code no-code paltform.
+By the way, the source code of [Fields Plugin in Github](https://github.com/dont-code/plugins/tree/master/libs/fields) is a great way to see how to develop a plugin for the dont-code no-code paltform.

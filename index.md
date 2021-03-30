@@ -19,7 +19,7 @@ _You can try a [Demo version of the Previewer here](https://dont-code.net/previe
 
 ## What is its status ?
 The Dont-Code platform is still in infancy, but you can already taste it.
-You can try here: [Application Builder Demo](https://dont-code.github.io/ide-ui/), and follow the instructions !
+You can try here: [Application Builder Demo](https://dont-code.net/ide-ui), and follow the instructions !
 
 Right now, you can see the working behavior of the dont-code app by
 - Changing the app title
