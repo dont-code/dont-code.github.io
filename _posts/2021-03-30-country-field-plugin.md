@@ -1,5 +1,5 @@
 ---
-title: "Basic Plugin Editor"
+title: "Country Field Plugin"
 excerpt_separator: "<!--more-->"
 categories:
 - Status 
