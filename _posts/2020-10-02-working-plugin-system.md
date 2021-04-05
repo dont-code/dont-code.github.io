@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - Status
 tags:
-  - Plugin
+  - Plugins
 ---
 
 A quick update as the plugin framework is now working

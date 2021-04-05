@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - Status
 tags:
-  - Plugin
+  - Plugins
 ---
 
 Now one can edit entities values
