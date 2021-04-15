@@ -7,12 +7,12 @@ An opensource framework for low-code, no-code application generation.
 
 ## How is it working ?
 **It consists of an Application builder where you describe your application:**
-![Builder](assets/IDE-Builder-Task-Manager-Simple.webm)
+![Builder](assets/IDE-Builder-Task-Manager-Simple.gif)
 
 _You can try a [Demo version of the Builder here](https://dont-code.net/ide-ui)._
 
 **And as well a [Previewer](https://dont-code.net/preview-ui) where you see the result in realtime**
-![Previewer Edit](assets/Preview-Task-Manager-Simple.webm)
+![Previewer Edit](assets/Preview-Task-Manager-Simple.gif)
 
 _You can try a [Demo version of the Previewer here](https://dont-code.net/preview-ui)._
 
