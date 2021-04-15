@@ -1,7 +1,16 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+sitemap: false
+---
+
 $large: 2100;
 $medium: 1800;
 $main-max-width: 1800;
 
 /* Max-width of the main content + sidebar */
 $main-sidebar-max-width: 1800;
+
+@charset "utf-8";
+
+@import "so-simple";
 
