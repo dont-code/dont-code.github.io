@@ -8,8 +8,7 @@ An opensource framework for low-code, no-code application generation.
 ## How is it working ?
 **It consists of a [Builder](https://dont-code.net/ide-ui) where you describe your application, and as well a [Previewer](https://dont-code.net/preview-ui) where you see the result in realtime:**
 
-![Builder](assets/IDE-Builder-Task-Manager-Simple.gif)
-![Previewer](assets/Preview-Task-Manager-Simple.gif)_
+![Demo](assets/dont-code-task-manager.gif)
 
 ## What is its status ?
 The Dont-Code platform is still in infancy, but you can already taste it.
