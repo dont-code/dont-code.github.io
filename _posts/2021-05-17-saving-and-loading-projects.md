@@ -15,6 +15,7 @@ Now one can save and load an application in the Builder.
 If you have a look at the [Application Builder Demo](https://dont-code.net/ide-ui), you'll see a new menu appeared: Projects.
 
 Clicking on it, you'll see the project screen where you can save the current project or load another one.
+
 ![Project Save](/assets/builder-save-project.gif)
 
 One can believe this would be an easy thing to develop, however even the development team were surprised to see how difficult it was.
