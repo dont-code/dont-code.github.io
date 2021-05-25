@@ -9,7 +9,7 @@ tags:
 
 ---
 
-Full Application loading  
+... is now delivered!  
 <!--more-->
 
 As a quick follow up to the last update, Previewer application now supports loading an application from scratch.
