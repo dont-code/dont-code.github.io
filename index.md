@@ -1,5 +1,4 @@
 An opensource framework for low-code, no-code application generation.
-[Try me !](https://dont-code.net/ide-ui){: .btn .btn--warning}
 
 ## What is it ?
 - Users are guided by the framework to create their applications.
@@ -7,6 +6,7 @@ An opensource framework for low-code, no-code application generation.
 
 ## How is it working ?
 **It consists of a [Builder](https://dont-code.net/ide-ui) where you describe your application, and as well a [Previewer](https://dont-code.net/preview-ui) where you see the result in realtime:**
+[Try me !](https://dont-code.net/ide-ui){: .btn .btn--info}
 
 ![Demo](assets/dont-code-task-manager.gif){: .demo-gif}
 
