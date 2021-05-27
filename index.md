@@ -1,5 +1,3 @@
-An opensource framework for low-code, no-code application generation.
-
 ## What is it ?
 - Users are guided by the framework to create their applications.
 - Developers can extend the platform by adding plugins.
