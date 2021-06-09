@@ -1,5 +1,5 @@
-## What is it ?
-- Users are guided by the framework to create their applications.
+## What is it not ?
+- Users are guided by the platform tools to design their applications.
 - Developers can extend the platform by adding plugins.
 
 ## How is it working ?
