@@ -31,11 +31,14 @@ Dont-code only provides the core system, with extensive support for plugins.
 
 With version 1.0 of the project, one could write a plugin for:
 - [x] Adding new types of element to be edited and previewed
-- [ ] Adding new fields type (address, short text, long text, pdf, who knows ?)
+- [x] Adding new fields type (address, short text, long text, pdf, who knows ?)
 - [x] Enhancing existing entities with additional features
 - [ ] Enabling queries inside the model (like, pre-filter selectionable items)
-- [ ] Provide new Datastorage, extending the server-side storage capabilities
+- [x] Provide new Datastorage, extending the server-side storage capabilities
 
+The following schema explains the different layers provided by the Dont-code Platform and what is extensible with a plugin:
+
+![Dont-code Layers](/assets/dont-code-layers.png)
 
 ## How can I help?
 If you believe in this project, there are several ways you could help.
