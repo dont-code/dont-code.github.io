@@ -1,6 +1,6 @@
-#DEscripyion
 
-## What is it not ?
+
+## What is it ?
 - Users are guided by the platform tools to design their applications.
 - Developers can extend the platform by adding plugins.
 
