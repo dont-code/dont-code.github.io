@@ -4,6 +4,13 @@ sitemap: false
 ---
 
 
+/* Max-width of the main content + sidebar */
+/* Site logo */
+$site-logo-width: 280px !default;
+$site-logo-height: 280px !default;
+
+/* Border radius */
+$border-radius: 0.25rem !default;
 
 @charset "utf-8";
 
