@@ -1,4 +1,6 @@
-# erer 
+---
+title: Welcome
+---
 
 ## What is it ?
 - Users are guided by the platform tools to design their applications.
