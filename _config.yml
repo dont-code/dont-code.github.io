@@ -1,11 +1,11 @@
 ### Site Settings ###
 title               : Dont-code your application !
 description         : >-
-                      A low-code, no-code opensource framework
+                      A low-code, no-code opensource platform
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : dont-code/dont-code.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme : mmistakes/so-simple-theme
-logo: "/assets/logo-shadow-squared.png"
+logo: "/assets/logo-shadow-rounded.png"
 
 google_fonts:
   - name: "Source Sans Pro"
