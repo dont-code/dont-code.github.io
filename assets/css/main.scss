@@ -21,3 +21,22 @@ $border-radius: 0.25rem !default;
   max-width: 90%;
   margin: 0 auto;
 }
+
+.site-title {
+  margin: 0 0 0;
+  padding: 0;
+  @include fluid-type($min-vw, $max-vw, $h2-min, $h2-max);
+  font-weight: 700;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.site-description {
+  margin-bottom: 0em;
+  font-family: $description-font-family;
+  @include fluid-type($min-vw, $max-vw, $h5-min, $h5-max);
+  font-weight: 400;
+  font-style: italic;
+}
