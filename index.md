@@ -5,7 +5,7 @@ show_excerpts: true
 entries_layout: list
 ---
 
-## In a nutshell ?
+## Dont-code in a nutshell
 The Dont-code platform is a suite of tools allowing any users to design their own applications with no IT knowledge.
 As well, developers can provide plugins that extends the platform capabilities to suit any needs
 
