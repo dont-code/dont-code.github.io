@@ -22,6 +22,7 @@ $border-radius: 0.25rem !default;
   margin: 0 auto;
 }
 
+/* Remove Margins */
 .site-title {
   margin: 0 0 0;
   padding: 0;
@@ -33,10 +34,19 @@ $border-radius: 0.25rem !default;
   }
 }
 
+/* Remove Margins */
 .site-description {
   margin-bottom: 0em;
   font-family: $description-font-family;
   @include fluid-type($min-vw, $max-vw, $h5-min, $h5-max);
   font-weight: 400;
   font-style: italic;
+}
+
+/* Increase the width for homepage */
+.page-wrapper {
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  max-width: $xlarge;
 }
