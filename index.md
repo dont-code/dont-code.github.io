@@ -1,6 +1,6 @@
 ---
 title: Welcome
-layout: home
+layout: home-no-title
 limit: 10
 show_excerpts: true
 entries_layout: list
