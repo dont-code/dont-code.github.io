@@ -5,16 +5,21 @@ show_excerpts: true
 entries_layout: list
 ---
 
-## Dont-code in a nutshell
-The Dont-code platform is a suite of tools allowing any users to design their own applications with no IT knowledge.
-As well, developers can provide plugins that extends the platform capabilities to suit any needs
+## In a nutshell
+How to solve the dilemma of IT: Users need an application developed for their own particular need. Opensource solutions solve the technical challenges, but adapting them to user needs requires a lot of Enterprise IT expertise and time ?
 
-- Users simply have to answer questions and fill placeholders to define their needs.
-- The questions are dynamically generated from a model describing how an application should work.
-- Plugins modify this model and enhance the questions to the users
+The Dont-code platform clearly defines the relationship between these 3 actors:
+- Opensource projects provide quality and highly generic solutions (say, an OAuth authentication framework).
+- They are encapsulated into Dont-code plugins available in the Dont-code marketplace (OAuth Dont-code plugin).
+- Enterprise IT configure this plugin for there specific identity provider, and push it to their Enterprise specific marketplace (Employees authentication plugin)
+- Depending on their need, users design their custom applications with the plugins available in the Enterprise marketplace by telling the Dont-code Builder "I want employees to access the application".
 
 ## How is it working ?
-**It consists of a [Builder](https://dont-code.net/ide-ui) where you describe your application, and as well a [Previewer](https://dont-code.net/preview-ui) where you see the result in realtime:**
+- Users simply have to answer questions in the  [Builder](https://dont-code.net/ide-ui) and fill placeholders to define their needs.
+- The questions are dynamically generated from a model describing how an application should work.
+- Plugins modify this model and enhance the questions to the users
+- All changes done by the users are stored and shown in realtime in the [Previewer](https://dont-code.net/preview-ui)
+
 [Try me !](https://dont-code.net/ide-ui){: .btn .btn--info}
 
 ![Demo](assets/dont-code-task-manager.gif){: .demo-gif}
