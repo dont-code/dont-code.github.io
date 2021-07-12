@@ -16,7 +16,7 @@ This week-end has been spent upgrading Angular to version 12, and that was an ea
 
 Of course this involves some mandatory steps:
 - [Upgrade nx.dev workplace](https://nx.dev/latest/angular/core-concepts/updating-nx)
-- [Update dependencies in package.json] (https://github.com/dont-code/plugins/commit/5ceff360704eb1d181cea7edebb2ce775759467a#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519)
+- [Update dependencies in package.json](https://github.com/dont-code/plugins/commit/5ceff360704eb1d181cea7edebb2ce775759467a#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519)
 - [Update PrimeNg to version 12](https://www.primefaces.org/primeng-v12-0-0-is-here/)
 - Run unit and e2e tests
   - Turns out I cannot use rxjs 7.x yet, as several libraries (include Angular 12) mandates rxjs 6.x
