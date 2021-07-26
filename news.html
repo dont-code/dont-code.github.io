@@ -92,12 +92,12 @@
         </div>
       </nav>
       <div class="main">
-        <section class="module bg-dark-60 blog-page-header" data-background="assets/images/news/news_bg.jpg">
+        <section class="module bg-dark-60 blog-page-header" data-background="assets/images/news/news-bg.jpg">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <h2 class="module-title font-alt">Dont-code news</h2>
-                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+                <div class="module-subtitle font-serif">Gets the latest updates about Dont-code: Features, Development, Partnerships...</div>
               </div>
             </div>
           </div>
@@ -105,150 +105,479 @@
         <section class="module">
           <div class="container">
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-12">
                 <div class="row post-masonry post-columns">
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"><a href="#"><img src="assets/images/post-2.jpg" alt="Blog-post Thumbnail"/></a></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/typescript-strict-mode.jpg" alt="Typescript strict mode"/></a></div>
                       <div class="post-header font-alt">
-                        <h2 class="post-title"><a href="#">Our trip to the Alps</a></h2>
-                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November | 3 Comments
+                        <h2 class="post-title"><a href="#">Using Strict mode for source</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 16th of July 2021
+                          Photo by <a href="https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pankaj Patel</a> on <a href="https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <p>After the move to Angular 12, we have upgraded all the projects to follow the 'strict' rules from Typescript. This means making subtle changes in almost all source code.</p>
+
+                        <p>With this <a href="https://angular.io/guide/strict-mode"><b>'strict' mode</b></a>, the typescript compiler is now checking all assignments to ensure null and undefined values are managed properly.</p>
+                        For example,
+                        <pre>let value:string = aMap.get('something');</pre>
+                        triggers an error 'Cannot assign string|undefined type to string variable'.
+
+                        <p>Because when you declare `let value:string` in strict mode you are explicitly telling the compiler that value cannot be null or undefined.
+                        As `aMap.get('something')` can return undefined, the compiler catches this.
+                          The compiler will do the same checks for function return values, parameters, class members, and so on!</p>
+
+                        You can solve this in 2 ways:
+
+                        <ol><li><b>Either explicitly allow null values in this variable:</b>
+
+                        `  let value?:string = aMap.get('something');`
+
+                        Be aware that may trigger other errors in the code, for example if you are calling a function with this variable as parameter: The function itself must specify it accepts undefined values !
+                        </li>
+                          <li><b>Or separate undefined value handling:</b>
+                        <pre>
+// value's inferred type is string or undefined:
+const value = aMap.get('something');
+if (value) {
+// compiler knows var cannot be undefined or null here
+  value.doOtherThing();
+} else {
+// Special treatment if no values are found
+}
+                        </pre>
+                          </li>
+                        </ol>
+                        <p>The result of all this hopefully gives developers more hints at potential nasty bugs in their code, at the expanse of speed of development and code clarity. Let's see if in the Dont-code case this is worth the effort.</p>
                       </div>
-                      <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"><a href="#"><img src="assets/images/post-masonry-1.jpg" alt="Blog-post Thumbnail"/></a></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/angular-12.png" alt="Angular 12"/></a></div>
                       <div class="post-header font-alt">
-                        <h2 class="post-title"><a href="#">Shore after the tide</a></h2>
-                        <div class="post-meta">By&nbsp;<a href="#">Andy River</a>&nbsp;| 11 November | 4 Comments
+                        <h2 class="post-title"><a href="#">Upgrade to Angular 12</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 12th of July 2021
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <p>This week-end has been spent upgrading Angular to version 12, and that was an easy one.</p>
+
+                        Of course this involves some mandatory steps:
+                        <ul>
+                          <li><a href="https://nx.dev/latest/angular/core-concepts/updating-nx">Upgrade nx.dev workplace</a>.
+                          </li>
+                          <li><a href="https://github.com/dont-code/plugins/commit/5ceff360704eb1d181cea7edebb2ce775759467a#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519">Update dependencies in package.json]</a>.
+                          </li>
+                          <li><a href="https://www.primefaces.org/primeng-v12-0-0-is-here">Update PrimeNg to version 12</a>.
+                          </li>
+                          <li>Run unit and e2e tests.
+                          </li>
+                          <li>Turns out I cannot use rxjs 7.x yet, as several libraries (include Angular 12) mandates rxjs 6.x .
+                          </li>
+                          <li>Some test scripts had to be amended - mostly due to problems not detected by previous versions.
+                          </li>
+                          <li>A bad typescript code in my cypress additional functions to find angular components made tests hang.
+                          </li>
+                          <li>Re-release dont-code/core, then dont-code/plugins, then dont-code/ide-ui and finally dont-code/preview-ui.
+                          </li>
+                          <li>Re-deploy and test: Everything was working fine.
+                          </li>
+                        </ul>
+                        <p>So it took me only a week-end to do this major upgrade, thanks <a href="https://angular.io">Angular</a>, <a href="https://nex.dev">Nrwl</a>, <a href="https://primefaces.org/primeng">Primetek</a>, <a href="https://jestjs.io">Jest</a> and <a href="https://cypress.io">Cypress</a>, I know this went smooth thanks to your hard work!</p>
                       </div>
-                      <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"><a href="#"><img src="assets/images/post-masonry-2.jpg" alt="Blog-post Thumbnail"/></a></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/enter-euro-amount.gif" alt="Enter Euro Amount"/></a></div>
                       <div class="post-header font-alt">
-                        <h2 class="post-title"><a href="#">We in New Zealand</a></h2>
-                        <div class="post-meta">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November | 15 Comments
+                        <h2 class="post-title"><a href="#">Support for Currencies</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 12th of July 2021
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <p>Now the basic types Currency have been added. You can now start designing finance apps.</p>
+                        <p>Thanks to the great <a href="https://www.primefaces.org/primeng">PrimeNG UI components</a>, the Previewer now allows you to edit amount in your Currency.</p>
+
+                        List of currencies has been added as well.
+
+                        <p>This took much more effort than for dates and images because I wanted to define a standard way of handling Money [with amount and currency](https://github.com/dont-code/core/blob/master/node/libs/core/src/lib/model/money-amount.ts), and I had to tweak the Dont-code framework itself to support multiple elements management by one field component.</p>
                       </div>
-                      <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"><a href="#"><img src="assets/images/post-masonry-3.jpg" alt="Blog-post Thumbnail"/></a></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/builder-grouped-field-types.png" alt="Date and image support"/></a></div>
                       <div class="post-header font-alt">
-                        <h2 class="post-title"><a href="#">Plane in the field</a></h2>
-                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>&nbsp;| 23 November | 3 Comments
+                        <h2 class="post-title"><a href="#">New field types added</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 30th of June 2021
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <p>Less than 2 days needed to add support for date, time, image and url.</p>
+
+                        <p>Thanks to the plugin architecture it took me just a few hours to add new field types to the Dont-code platform...
+                        I just needed to copy / paste the code for the basic fields (Text, Long, Numeric) and update the Angular templates to use <a href="https://primefaces.org/primeng/showcase/#/calendar">PrimeNg Calendar Component</a>.</p>
+
+                        <p>In fact, most of the time was spent adding support for grouping field types due to the increasing number of them.</p>
+
+                        <p>Next step is to add Currencies and Monetary Amount field types. Let's see how much effort will be needed for that !</p>
                       </div>
-                      <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"><a href="#"><img src="assets/images/post-4.jpg" alt="Blog-post Thumbnail"/></a></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/share-data.gif" alt="Sharing data"/></a></div>
                       <div class="post-header font-alt">
-                        <h2 class="post-title"><a href="#">Clock</a></h2>
-                        <div class="post-meta">By&nbsp;<a href="#">Andy River</a>&nbsp;| 11 November | 4 Comments
+                        <h2 class="post-title"><a href="#">Sharing data</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 6th of June 2021
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <p>Available today, you can share information with other users by selecting "Share with Dont-code users" in the <a href="https://dont-code.net/ide-ui">Builder</a>.</p>
+
+                        <p>You know you can directly edit data in the <a href="https://dont-code.net/preview-ui">Previewer</a> while designing your application. Until now, this data was saved in your local computer (in the [Browser's IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)).
+                          However, if you select "Share information with Dont-code users", then the data will be stored through the <a href="https://github.com/dont-code/data-services">Dont-code Data API</a> running in our Test server and stored in a MongoDB Database.</p>
+
+                        <p>This means another user selecting the same project will be able to see and edit the same data. Another step in the journey of a usable no-code platform.</p> Let's see if in the Dont-code case this is worth the effort.</p>
                       </div>
-                      <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"><a href="#"><img src="assets/images/post-6.jpg" alt="Blog-post Thumbnail"/></a></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/popup-session.gif" alt="Session Mgt"/></a></div>
                       <div class="post-header font-alt">
-                        <h2 class="post-title"><a href="#">Lighthouse to the shore</a></h2>
-                        <div class="post-meta">By&nbsp;<a href="#">Dylan Woods</a>&nbsp;| 5 November | 15 Comments
+                        <h2 class="post-title"><a href="#">Session management</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 9th June 2021
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <p>Session Management has been implemented.</p>
+
+                        <p>When you update your application model in the Builder, it shares all with the Previewer through a server.
+                        This allows you to have the Previewer neatly separated from the Builder, and even starts multiple Previewers, all updated at the same time. Now when you use the [Builder Demo](https://dont-code.net/ide-ui/), you can see at the top right a small popup showing the server it is connected to, and as well the Session used. Any modifications you're doing to your application design, is sent to the server and stored with this Session.</p>
+
+                        <p>Then, when you Open the Previewer <img src="assets/images/news/open-previewer.gif" />, it will display the latest updates of your application related to this Session.</p>
+
+                        <p>In order to do that, I've used a <a href="https://mongodb.org">MongoDB database</a> running on server side and storing all sessions updates.
+                          The side effect is now I can see if and when people are using the demo.</p>
                       </div>
-                      <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                     </div>
                   </div>
-                </div>
-                <div class="pagination font-alt"><a href="#"><i class="fa fa-angle-left"></i></a><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#"><i class="fa fa-angle-right"></i></a></div>
-              </div>
-              <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
-                <div class="widget">
-                  <form role="form">
-                    <div class="search-box">
-                      <input class="form-control" type="text" placeholder="Search..."/>
-                      <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/demo-apps.png" alt="Demo apps"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Application Loading in Previewer</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 25th May 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>Full Application loading is now delivered to the Previewer as well!</p>
+                        <p>As a quick follow up to the last update, Previewer application now supports loading an application from scratch.
+                          With the previously mentioned support from the Builder, one can just load, save or create a new application and see the result immediately.</p>
+
+                        <p>In the <a href="https://dont-code.net/ide-ui">Builder Demo</a>, you can load small applications already made: A Task Manager, a very simple Note Editor, a Recipe collection and so on...</p>
+                      </div>
                     </div>
-                  </form>
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Blog Categories</h5>
-                  <ul class="icon-list">
-                    <li><a href="#">Photography - 7</a></li>
-                    <li><a href="#">Web Design - 3</a></li>
-                    <li><a href="#">Illustration - 12</a></li>
-                    <li><a href="#">Marketing - 1</a></li>
-                    <li><a href="#">Wordpress - 16</a></li>
-                  </ul>
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Popular Posts</h5>
-                  <ul class="widget-posts">
-                    <li class="clearfix">
-                      <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-3.jpg" alt="Post Thumbnail"/></a></div>
-                      <div class="widget-posts-body">
-                        <div class="widget-posts-title"><a href="#">Designer Desk Essentials</a></div>
-                        <div class="widget-posts-meta">23 january</div>
-                      </div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-4.jpg" alt="Post Thumbnail"/></a></div>
-                      <div class="widget-posts-body">
-                        <div class="widget-posts-title"><a href="#">Realistic Business Card Mockup</a></div>
-                        <div class="widget-posts-meta">15 February</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Tag</h5>
-                  <div class="tags font-serif"><a href="#" rel="tag">Blog</a><a href="#" rel="tag">Photo</a><a href="#" rel="tag">Video</a><a href="#" rel="tag">Image</a><a href="#" rel="tag">Minimal</a><a href="#" rel="tag">Post</a><a href="#" rel="tag">Theme</a><a href="#" rel="tag">Ideas</a><a href="#" rel="tag">Tags</a><a href="#" rel="tag">Bootstrap</a><a href="#" rel="tag">Popular</a><a href="#" rel="tag">English</a>
                   </div>
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Text</h5>The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
-                </div>
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Recent Comments</h5>
-                  <ul class="icon-list">
-                    <li>Maria on <a href="#">Designer Desk Essentials</a></li>
-                    <li>John on <a href="#">Realistic Business Card Mockup</a></li>
-                    <li>Andy on <a href="#">Eco bag Mockup</a></li>
-                    <li>Jack on <a href="#">Bottle Mockup</a></li>
-                    <li>Mark on <a href="#">Our trip to the Alps</a></li>
-                  </ul>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/builder-save-project.gif" alt="Saving project"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Saving and Loading projects</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 17th of May 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>Now one can save and load an application in the Builder.</p>
+                        <p>If you have a look at the <a href="https://dont-code.net/ide-ui">Application Builder Demo</a>, you'll see a new menu appeared: Projects.</p>
+
+                        <p>Clicking on it, you'll see the project screen where you can save the current project or load another one.</p>
+
+                        <p>One can believe this would be an easy thing to develop, however even the development team were surprised to see how difficult it was.
+                          Not only we had to:</p>
+                        <ul>
+                          <li>Develop a new service to provide load/save project
+                          </li>
+                          <li>Switch to a better server to support a database for the Demo application
+                          </li>
+                          <li>Develop the screen in the builder to support load and save project workflow
+                        </ul>
+                        <p>However, we didn't expect the following issues:</p>
+                        <ul>
+                          <li>As the Builder editor screen is built automatically based on a meta-model document, it needs to be rebuilt whenever a project is loaded.
+                          </li>
+                          <li>The Builder shows the loaded project elements mixed with elements from the meta-model ready to be answered.
+                          </li>
+                          <li>The meta-model itself is dynamic (updatable by plugins).
+                          </li>
+                        </ul>
+                        <p>So all this brought complexity to the development of this feature. And fear is growing as it needs to be applied to the [Previewer](https://dont-code.net/preview-ui) as well.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/seo-screen.png" alt="Seobility screenshot"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Axis on communication</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 4th of May 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>We are entering a new step in the evolution of Dont-Code. Now that we got the basic applications working, we can show and explain the concept behind the Dont-Code platform: Going one level higher than the existing low-code or no-code frameworks. Dont-Code lets you combine already developed features together just with answering questions.</p>
+                        <p>We've put in place some <a href="https://clicky.com">Analytics (Clicky)</a> and <a href="https://seobility.net">SEO (Seobility)</a> tools, and they show a lack of recognition of Dont-code with no-code or low-code keywords.</p>
+                        <p>To bring more people and more developers to the site, we'll do the following:</p>
+                        <ul>
+                          <li>Make a video showing how to develop a Task list application in one minute.
+                          </li>
+                          <li>Write an article on Medium explaining the philosophy of Dont-Code.
+                          </li>
+                          <li>Post some notes on Reddit to draw potential developer's attention.
+                          </li>
+                          <li>...
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/country-editor.png" alt="Editing countries"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Country field plugin</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 30th of March 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>How to manage countries with the Dont-code platform?</p>
+                        <p>We're happy to announce that a new plugin has been developed: The [Fields Plugin](https://github.com/dont-code/plugins/tree/master/libs/fields) provides a way to view / edit a Country.
+                        It is now enabled by default in the Builder and the Previewer.</p>
+                        <p>In the Builder, you can create a field of type Country:
+                        <img src="assets/images/news/country-builder.png"/></p>
+                        <p>Then, in the Previewer, you can select the country directly from a list and the values are displayed nicely with the flag in the list of elements:
+                          <img src="assets/images/news/country-list.png"/></p>
+                        <p>You can see that with the power of the dont-code platform, a plugin developed once can be reused to any application.</p>
+                        <p>By the way, the source code of <a href="https://github.com/dont-code/plugins/tree/master/libs/fields">Fields Plugin in Github</a> is a great way to see how to develop a plugin for the Dont-code no-code platform.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/list-entities.png" alt="List basic fields"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Basic Plugin Editor</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 16th of February 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>Just a quick update to announce that the <a href="https://github.com/dont-code/plugins/tree/master/libs/basic">Basic Plugin</a> can now edit values of the entity.</p>
+
+                        <p>The screenshots below show that for any created entities, you can list them (with dummy data), and as well edit them.
+                           <img src="assets/images/news/edit-entity.png"/>.</p>
+
+                        <p>Thanks to all the work done previously, it's now quite fast to create these new features !</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Update on the basic plugin</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 7th of February 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>Since its inception, the dont-code framework is progressing slowly but steadily.
+                          As we want plugins to be tightly integrated into the framework itself, we have decided that all screens shown will be part of a plugin.</p>
+
+                        <p>This is the purpose of the [Basic Plugin](https://github.com/dont-code/plugins/tree/master/libs/basic), it manages the display of entities by listing them and editing them.
+                          For now, it just shows table columns that dynamically adjust to the fields you declare in the editor.</p>
+
+                        <p>Next steps, displaying a list of values, displaying edit form, running queries against the database...</p>
+
+                        <p>By the way, the menu now supports moving, deleting and renaming entities.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/dynamic-editor-screen-type.gif" alt="Editor screen"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Plugin system is working</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 2nd of October 2020
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>We achieved quite a big step last week as the dont-code framework now supports loading plugins dynamically.
+                          It supports two types of plugins:</p>
+                        <ul>
+                          <li>The plugins can modify the behavior of the [Builder](https://github.com/dont-code/ide-ui). It can modify the model used by dont-code to describe an application, then the builder automatically adapts the questions to support it.
+                            For example, the [test screen plugin](https://github.com/dont-code/plugins/tree/master/libs/screen) adds the type field to the screen, and changes editor fields dynamically when selected.
+                         </li>
+                          <li>As well plugins can enhance the [Previewer](https://github.com/dont-code/preview-ui) by registering to display any items in the model.
+                            The Previewer will call dynamically the registered plugin and push any information to it.
+                          </li>
+                        </ul>
+                        <p>Of course, you can combine both in a single plugin, allowing you to add or modify any item in the editor and handle its display in the previewer !</p>
+                        <p>To further enhance the plugin framework and make sure it is performant enough, even the core ui components of the previewer will be developed as plugins. You can find the basic ones in the following <a href="https://github.com/dont-code/plugins/libs/basic">repository</a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/application-builder.png" alt="Application Builder"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">The Dont-code tools</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 16th July 2020
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>Two applications work together to enable the development of applications without coding.
+                          Let's describe them...</p>
+                        <ol>
+                          <li>The <a href="https://github.com/dont-code/ide-ui">Builder</a> is the Development Environment. It shows you pre-defined sentences, and you simply have to fill the blanks.
+                            It is running in Angular + Angular Material
+                          </li>
+                          <li>The <a href="https://github.com/dont-code/preview-ui">Previewer</a> is where you see the result in realtime. It is connected to the Builder and reacts automatically to editions you make in the Builder
+                            It is running in Angular + [PrimeNG UI](https://www.primefaces.org/primeng/)
+                          </li>
+
+                          For example,
+                          <ul>
+                            <li>Start the <a href="https://dont-code.net/ide-ui">Builder demo</a>, then have it open the Previewer by clicking here:
+                              <img src="assets/images/news/builder-open-previewer.png"/>
+                            </li>
+                            <li>The previewer opens with default screen:
+                              <img src="assets/images/news/previewer-just-opened.png"/>
+                            </li>
+                            <li>Then back to the editor, and change the application name:
+                              <img src="assets/images/news/builder-change-app-name.png"/>
+                            </li>
+                            <li>You can see the Previewer immediately updates its title:
+                              <img src="assets/images/news/previewer-with-name-test.png"/>
+                            </li>
+                            <li>Same if you add a new screen in the editor:
+                              <img src="assets/images/news/builder-with-new-screen.png"/>
+                            </li>
+                            <li>It creates a menu in the Previewer:
+                              <img src="assets/images/news/previewer-with-menu-editor.png"/>
+                            </li>
+                          </ul>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Rewrote Editor Element</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 23rd of May 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>To support plugins in the editor, I need to be able to display different editor elements depending on a selection.</p>
+
+                        <p>For example, the [Screen Plugin](https://github.com/dont-code/plugins/tree/master/lib/screen) adds a screen type item, that when selected to 'list' for example, will ask the user only about
+                          the entity name to display in the list.</p>
+
+                        <p>So the default elements of a screen, like 'components' should be removed as they are not necessary.
+                          The handling of editor elements is done in [TextService](https://github.com/dont-code/ide-ui/tree/master/apps/ide-ui/src/app/shared/text/services/text.service.ts) class, with maps of lists and so on. Complexity is high !</p>
+
+                        <p>Now I changed this and [EditorElement](https://github.com/dont-code/ide-ui/blob/master/apps/ide-ui/src/app/routes/editor/editor-element.ts) stores their children directly, this simplifies a lot the code, I just spent 2 days rewritting it.
+                        Two days with no new functionalities added, but now the code is simpler and ready for dynamic editing.
+                          I even removed intermediary classes that were not needed anymore... Cool!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">About licenses</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 22nd of May 2021
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>I'm not really an expert in licenses, so I'm not sure my current choices will be the right ones.</p>
+                        <p>There are several parts to the dont-core framework, and as they serve different purposes, they have different licenses.</p>
+                        <ol>
+                          <li>The <a href="https://github.com/dont-code/core">core library</a> framework is used by all components, and I want anyone interested to be able to use it.
+                            So for it I selected the most permissive license I'm aware of: the <b>MIT license</b>.
+                          </li>
+                          <li>The <a href="https://github.com/dont-code/ide-ui">Builder</a> and <a href="https://github.com/dont-code/preview-ui">Previewer</a> can be both rewritten as long as they follow the guidelines defined by core.
+                            <p>However I don't want them to be used without something in return, so they are under <b>AGPL license</b>.
+                            That means you can derive your work from it, and even run them in your public cloud, but any changes to it must be open-sourced as well.</p>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/builder-with-type-from-plugin.png" alt="Builder showing plugin"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">The plugin system</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 5th of May 2020
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>One of the most important part is the plugin system.</p>
+
+                        <p>To be successful and different from other low-code or no-code platforms, Dont-code should be as extensible as possible.
+                          This way, persons or companies from all over the world will be able to use and add any kind of functionalities.</p>
+
+                        <p>Of course, this is quite complex as you must allow changes in the core of the framework from external.</p>
+
+                        This is why I need to:
+                        <ul style="list-style-type: none">
+                          <li><i class="fa fa-check-square-o"></i>&nbsp;Create a <a href="https://github.com/dont-code/core">Core library</a>, linking together the <a href="https://github.com/dont-code/ide-ui">Builder</a>, the <a href="https://github.com/dont-code/preview-ui">Previewer</a> and the <a href="https://github.com/dont-code/plugins">Plugins</a>.
+                          </li>
+                          <li><i class="fa fa-check-square-o"></i>&nbsp;Enable plugins to register to core.
+                          </li>
+                          <li><i class="fa fa-check-square-o"></i>&nbsp;Re-write partially the Builder to support dynamic schema as it is being updated by plugins.
+                          </li>
+                          <li><i class="fa fa-check-square-o"></i>&nbsp;Tidy up the editor to enable options overloading and reordering.
+                          </li>
+                          <li><i class="fa fa-check-square-o"></i>&nbsp;Enable the plugins to register with the Previewer.
+                          </li>
+                        </ul>
+
+                        <p>It is starting to work now.
+                          For example, a plugin can add a list of options named 'type' to the editor by registering with</p>
+<pre>
+  {
+    "schema-updates": [{
+      "id": "screen-list",
+      "description": "A screen displaying a list of items",
+      "changes": [{
+        "location": {
+          "parent": "#/definitions/screen",
+          "id": "type",
+          "after": "name"
+        },
+      "add": {
+        "enum": [
+          "list"
+        ]
+      },
+      "props": {
+        "entity": {
+          "$ref": "#/definitions/entity",
+          "format": "#/creation/entities"
+        }
+      },
+      "replace": true
+      }]
+    }]
+  }
+</pre>
+                        <p>Of course, it is placed only at the end for now, it should as well replace the other options of screens, but it's a start.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
