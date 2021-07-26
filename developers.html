@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>Dont-code your applications</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="238x133" href="assets/images/favicons/logo.png">
+    <link rel="icon" type="image/png" sizes="238x133" href="assets/images/favicons/logo.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/logo.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Seo with Clicky -->
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101307324);</script>
+    <script async src="//static.getclicky.com/js"></script>
+    <!--
+    Stylesheets
+    =============================================
+    
+    -->
+    <!-- Default stylesheets-->
+    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="assets/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="assets/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="assets/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="assets/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="assets/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">Dont-code</a>
+          </div>
+          <div class="collapse navbar-collapse" id="custom-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="news.html">News</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#totop">Developers</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#totop" data-toggle="dropdown">Homepage</a>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Links</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="https://github.com/dont-code" target="_blank">Github (Source)</a></li>
+                      <li><a href="https://angular.io" target="_blank">Angular (Framework)</a></li>
+                      <li><a href="https://nx.dev" target="_blank">Nx (workspace)</a></li>
+                      <li><a href="https://primefaces.org/primeng" target="_blank">Prime-ng (UI Components)</a></li>
+                      <li><a href="https://quarkus.io" target="_blank">Quarkus (Services)</a></li>
+                      <li><a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ Idea (IDE)</a></li>
+                      <li><a href="https://mongodb.com" target="_blank">MongoDB (Database)</a></li>
+                      <li><a href="https://scaleway.com" target="_blank">Scaleway (Hosting)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="main">
+        <section class="module bg-dark-30 about-page-header" data-background="assets/images/developers/developer-bg.png">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt mb-0">Developing for Dont-code</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="module">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 bg-light">
+                <h2 class="font-alt mb-0">Dont-code Platform layers</h2>
+                <hr class="divider-w mt-10 mb-20">
+                <p>To enable a user's friendly way to design an application, while supporting high level of customization by plugins, the platform consists of several layers.</p>
+                <h3 class="font-alt mb-0">Illustration:</h3>
+
+                <img src="assets/images/developers/dont-code-layers.png" />
+
+                <h3 class="font-alt mb-0">From a bottom-up perspective, one can see:</h3>
+                <ul>
+                  <li>The Dont-code Platform itself provides functionalities for loading plugins, extending application model, handling events on the model. The core is developed in Typescript and is independent of any libraries, except RxJs. It provides Java mapping as well for server-side development.
+                  </li>
+                  <li>A Plugin developed for Dont-code describes its behavior using the [Extension meta-model](https://github.com/dont-code/core/blob/master/node/libs/core/src/assets/schemas/v1/plugin-config-schema.json). This is read by the Dont-code platform upon loading the plugin, and the changes described in it are applied to the application model.
+                  </li>
+                  <li>Any application designed for the Dont-code is following this [Application meta-model](https://github.com/dont-code/core/blob/master/node/libs/core/src/assets/schemas/v1/dont-code-schema.json). This is basically a json schema that can be modified by plugins. This meta-model is the heart of Dont-code:
+                  </li>
+                  <li>It is used by the Builder to dynamically create questions and get input from the users.
+                  </li>
+                  <li>It is used by the Previewer to select the right user interface component to use.
+                  </li>
+                  <li>It is used to generate events whenever a change the application design changes.
+                  </li>
+                  <li>Plugins provide the User Interface components. Using the Extension meta-model, they register themselves for example to edit or display a particular field type, or complete new screens or workflows, or connect to other systems, and so on... For now, as the Builder is developed in Angular, the components must be compatible, but nothing prevents you from using other frameworks.
+                  </li>
+                  <li>With all these layers at his disposal, the user can design its custom application. The Dont-code framework updates in realtime a json representation of it, compatible with the Application Meta-model enhanced by plugins. This json is saved / loaded as projects.
+                  </li>
+                  <li>When the Previewer loads an application, it checks the description of entities and fields, and it adapts the user interface. The user can then see and edit values that are stored. This becomes the application's data.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <h2 class="font-alt mb-0">Project Organization</h2>
+                <hr class="divider-w mt-10 mb-20">
+                <p>The framework is organized into multiple repositories in [Github](https://github.com/dont-code).</p>
+                <ul>
+
+                  <li><a href="https://github.com/dont-code/core"><b>Core</b></a> is a pure typescript library, deployed in npm as <a href="https://www.npmjs.com/package/@dontcode/core">@dontcode/core.</a>
+                It provides the common application schema and api to manage an extensible application design platform based on realtime messages.
+                It only has a dependency to Rxjs, so it can be used with any UI framework.
+                  </li>
+                  <li><a href="https://github.com/dont-code/ide-ui"><b>Ide-ui</b></a> is an Angular application that reads the application schema, potentially extended by plugins, and provides a means for the user to describe their applications based on this schema.
+                It displays a set of questions, and pushes change messages each time the user make an answer
+                  </li>
+                  <li><a href="https://github.com/dont-code/preview-ui"><b>Preview-ui</b></a> is an Angular application listening to these change messages and showing results in realtime.
+                It provides as well a debugger page for emulating changes and testing your plugin:
+                <img src="assets/images/developers/Previewer%20with%20debug%20page.png" alt="Previewer Debug" />
+                  </li>
+                  <li><a href="https://github.com/dont-code/plugins"><b>Plugins</b></a> contains multiple plugins and a common library to support them. You can use this as an example on how to develop plugins for Dont-code.
+                  </li>
+                  <li><a href="https://github.com/dont-code/ide-services"><b>Ide-Services</b></a>
+                The Ide-ui is connected to these services to push change messages, and this service will store them. For now, it's sending them to the Preview-Service.
+                Developed in Java / [Quarkus](https://www.quarkus.io)
+                  </li>
+                  <li><a href="https://github.com/dont-code/preview-services"><b>Preview-Services</b></a>
+                The Preview-ui is connected to these services to receive the change messages. Developed in Java / <a href="https://www.quarkus.io">Quarkus</a>.
+                  </li>
+                  <li><a href="https://github.com/dont-code/project-services"><b>Project-Services</b></a>
+                Used to list, store and load projects. Developed in Java / <a href="https://www.quarkus.io">Quarkus</a>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 bg-light">
+                <h2 class="font-alt mb-0">Plugin system</h2>
+                <hr class="divider-w mt-10 mb-20">
+                <p>Dont-code only provides the core system, with extensive support for plugins. With version 1.0 of the project, one could write a plugin to:</p>
+                <ul style="list-style-type: none">
+                  <li><i class="fa fa-check-square-o"></i>&nbsp;Adding new types of element to be edited and previewed.
+                  </li>
+                  <li><i class="fa fa-check-square-o"></i>&nbsp;Adding new fields type (address, short text, long text, pdf, who knows ?).
+                  </li>
+                  <li><i class="fa fa-check-square-o"></i>&nbsp;Enhancing existing entities with additional features.
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;Enabling queries inside the model (like, pre-filter selectable items).
+                  </li>
+                  <li><i class="fa fa-check-square-o"></i>&nbsp;Provide new Datastorage, extending the server-side storage capabilities.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <h2 class="font-alt mb-0">How can I help?</h2>
+                <hr class="divider-w mt-10 mb-20">
+                <p>If you believe in this project, there are several ways you could help as all areas needs improvements...
+                </p>
+                <ul style="list-style-type: none">
+                  <li><i class="fa fa-square-o"></i>&nbsp;Obviously this website need to be tidied up and maintained.
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;The core system is made of complex Typescript with some great technical challenges like the plugins dynamic loading. Applying the <a href="https://github.com/angular-architects/module-federation-plugin/blob/main/libs/mf/README.md" target="_blank"> angular architect's module federation</a> would greatly improve this part.
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;The build pipeline, developed using Github Actions, needs to be streamlined.
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;For Angular developers, both the Builder and Previewer need your attention.
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;The server-side part in Java / <a href="https://quarkus.io" target="_blank">Quarkus</a> needs to be enhanced. Other server-side implementations can be provided as well.
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;Custom plugins can be developed, see the list of possibilities above. For example, a wrapper for user authentication through oauth, or a connector for <a href="https://n8n.io" target="_blank"><b>n8n low-code workflow automation tool</b></a> or an enabler for <a href="https://appwrite.io/" target="_blank"><b>Appwrite backend</b></a>
+                  </li>
+                  <li><i class="fa fa-square-o"></i>&nbsp;A Runtime engine (or a code generator) needs to be written: Right now the Previewer is the runtime engine...
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="divider-d">
+        <footer class="footer bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="copyright font-alt">&copy; 2021&nbsp;<a href="index.html">Dont-code</a>, All Rights Reserved.</p>
+              </div>
+              <div class="col-sm-6">
+                <div class="footer-social-links">Based on the <a href="https://themewagon.com/themes/titan/"><img src="assets/images/favicons/titan-logo.png" style="vertical-align: top;" />itan template. Great stuff guys, you rock!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="assets/lib/jquery/dist/jquery.js"></script>
+    <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/lib/wow/dist/wow.js"></script>
+    <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="assets/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="assets/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="assets/lib/smoothscroll.js"></script>
+    <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
