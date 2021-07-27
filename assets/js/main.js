@@ -90,7 +90,7 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
                 if (homeSection.hasClass('home-full-height')) {
                     homeSection.height($(window).height());
                 } else {
-                    homeSection.height($(window).height() * 0.85);
+                    homeSection.height($(window).height() * 0.45);
                 }
             }
         }
