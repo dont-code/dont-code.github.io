@@ -253,7 +253,8 @@ a,
 }
 
 .bg-footer {
-  background: rgba(66, 26, 107, 0.4);
+  background: #111;
+  color: white;
 }
 
 .bg-dark-30:before {
@@ -1513,6 +1514,10 @@ General Styles - Owlcarousel
 --------------------------------------------------------------*/
 .footer {
   padding: 10px 0;
+}
+
+.footer a {
+  color: white;
 }
 
 .footer .copyright {
