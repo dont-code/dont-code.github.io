@@ -33,7 +33,46 @@
       "info": {
         "remote-entry":"https://dont-code.net/plugin-rest/remoteEntry.mjs"
       },
-      "config": {}
+      "config": {
+        "definition-updates": [{
+          "location": {
+            "parent": "creation/sources",
+            "id": "*"
+          },
+          "update": {
+            "name": "Dont-Code Sessions Source",
+            "type": "Rest",
+            "url": "https://test.dont-code.net/preview/sessions?srcInfo=demo"
+          }
+        },{
+          "location": {
+            "parent": "creation/entities",
+            "id": "*"
+          },
+          "update": {
+            "name": "Session",
+            "from": "Dont-Code Sessions Source",
+            "fields": {
+              "aa": {
+                "name": "startTime",
+                "type": "Date & Time"
+              },
+              "ab": {
+                "name": "endTime",
+                "type": "Date & Time"
+              },
+              "ac": {
+                "name": "isDemo",
+                "type": "boolean"
+              },
+              "ad": {
+                "name": "elementsCount",
+                "type": "Number"
+              }
+            }
+          }
+        }]
+      }
     }
   ]
 }
