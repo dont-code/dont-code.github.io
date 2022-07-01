@@ -4,11 +4,6 @@
   "description": "Repository with all plugins for managing Dont-code environment.",
   "plugins": [
     {
-      "id": "Sessions",
-      "display-name": "Enable viewing sessions ",
-      "version": "1.0.0"
-    },
-    {
       "id": "Basic",
       "display-name": "Basic plugin for editing entities",
       "version": "1.0.0",
