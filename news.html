@@ -333,7 +333,7 @@ if (value) {
 
                         List of currencies has been added as well.
 
-                        <p>This took much more effort than for dates and images because I wanted to define a standard way of handling Money [with amount and currency](https://github.com/dont-code/core/blob/master/node/libs/core/src/lib/model/money-amount.ts), and I had to tweak the Dont-code framework itself to support multiple elements management by one field component.</p>
+                        <p>This took much more effort than for dates and images because I wanted to define a standard way of handling Money [with amount and currency](https://github.com/dont-code/core/blob/main/node/libs/core/src/lib/model/money-amount.ts), and I had to tweak the Dont-code framework itself to support multiple elements management by one field component.</p>
                       </div>
                     </div>
                   </div>
@@ -484,14 +484,14 @@ if (value) {
                       </div>
                       <div class="post-entry">
                         <p>How to manage countries with the Dont-code platform?</p>
-                        <p>We're happy to announce that a new plugin has been developed: The [Fields Plugin](https://github.com/dont-code/plugins/tree/master/libs/fields) provides a way to view / edit a Country.
+                        <p>We're happy to announce that a new plugin has been developed: The [Fields Plugin](https://github.com/dont-code/plugins/tree/main/libs/fields) provides a way to view / edit a Country.
                         It is now enabled by default in the Builder and the Previewer.</p>
                         <p>In the Builder, you can create a field of type Country:
                         <img src="assets/images/news/country-builder.png"/></p>
                         <p>Then, in the Previewer, you can select the country directly from a list and the values are displayed nicely with the flag in the list of elements:
                           <img src="assets/images/news/country-list.png"/></p>
                         <p>You can see that with the power of the dont-code platform, a plugin developed once can be reused to any application.</p>
-                        <p>By the way, the source code of <a href="https://github.com/dont-code/plugins/tree/master/libs/fields">Fields Plugin in Github</a> is a great way to see how to develop a plugin for the Dont-code no-code platform.</p>
+                        <p>By the way, the source code of <a href="https://github.com/dont-code/plugins/tree/main/libs/fields">Fields Plugin in Github</a> is a great way to see how to develop a plugin for the Dont-code no-code platform.</p>
                       </div>
                     </div>
                   </div>
@@ -504,7 +504,7 @@ if (value) {
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>Just a quick update to announce that the <a href="https://github.com/dont-code/plugins/tree/master/libs/basic">Basic Plugin</a> can now edit values of the entity.</p>
+                        <p>Just a quick update to announce that the <a href="https://github.com/dont-code/plugins/tree/main/libs/basic">Basic Plugin</a> can now edit values of the entity.</p>
 
                         <p>The screenshots below show that for any created entities, you can list them (with dummy data), and as well edit them.
                            <img src="assets/images/news/edit-entity.png"/>.</p>
@@ -524,7 +524,7 @@ if (value) {
                         <p>Since its inception, the dont-code framework is progressing slowly but steadily.
                           As we want plugins to be tightly integrated into the framework itself, we have decided that all screens shown will be part of a plugin.</p>
 
-                        <p>This is the purpose of the [Basic Plugin](https://github.com/dont-code/plugins/tree/master/libs/basic), it manages the display of entities by listing them and editing them.
+                        <p>This is the purpose of the [Basic Plugin](https://github.com/dont-code/plugins/tree/main/libs/basic), it manages the display of entities by listing them and editing them.
                           For now, it just shows table columns that dynamically adjust to the fields you declare in the editor.</p>
 
                         <p>Next steps, displaying a list of values, displaying edit form, running queries against the database...</p>
@@ -546,7 +546,7 @@ if (value) {
                           It supports two types of plugins:</p>
                         <ul>
                           <li>The plugins can modify the behavior of the [Builder](https://github.com/dont-code/ide-ui). It can modify the model used by dont-code to describe an application, then the builder automatically adapts the questions to support it.
-                            For example, the [test screen plugin](https://github.com/dont-code/plugins/tree/master/libs/screen) adds the type field to the screen, and changes editor fields dynamically when selected.
+                            For example, the [test screen plugin](https://github.com/dont-code/plugins/tree/main/libs/screen) adds the type field to the screen, and changes editor fields dynamically when selected.
                          </li>
                           <li>As well plugins can enhance the [Previewer](https://github.com/dont-code/preview-ui) by registering to display any items in the model.
                             The Previewer will call dynamically the registered plugin and push any information to it.
@@ -611,13 +611,13 @@ if (value) {
                       <div class="post-entry">
                         <p>To support plugins in the editor, I need to be able to display different editor elements depending on a selection.</p>
 
-                        <p>For example, the [Screen Plugin](https://github.com/dont-code/plugins/tree/master/lib/screen) adds a screen type item, that when selected to 'list' for example, will ask the user only about
+                        <p>For example, the [Screen Plugin](https://github.com/dont-code/plugins/tree/main/lib/screen) adds a screen type item, that when selected to 'list' for example, will ask the user only about
                           the entity name to display in the list.</p>
 
                         <p>So the default elements of a screen, like 'components' should be removed as they are not necessary.
-                          The handling of editor elements is done in [TextService](https://github.com/dont-code/ide-ui/tree/master/apps/ide-ui/src/app/shared/text/services/text.service.ts) class, with maps of lists and so on. Complexity is high !</p>
+                          The handling of editor elements is done in [TextService](https://github.com/dont-code/ide-ui/tree/main/apps/ide-ui/src/app/shared/text/services/text.service.ts) class, with maps of lists and so on. Complexity is high !</p>
 
-                        <p>Now I changed this and [EditorElement](https://github.com/dont-code/ide-ui/blob/master/apps/ide-ui/src/app/routes/editor/editor-element.ts) stores their children directly, this simplifies a lot the code, I just spent 2 days rewritting it.
+                        <p>Now I changed this and [EditorElement](https://github.com/dont-code/ide-ui/blob/main/apps/ide-ui/src/app/routes/editor/editor-element.ts) stores their children directly, this simplifies a lot the code, I just spent 2 days rewritting it.
                         Two days with no new functionalities added, but now the code is simpler and ready for dynamic editing.
                           I even removed intermediary classes that were not needed anymore... Cool!</p>
                       </div>
