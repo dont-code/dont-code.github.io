@@ -105,30 +105,30 @@
 
                   <li>Fork from the <a href="https://github.com/dont-code/plugin-seed"><b>Plugin-Seed</b></a> repository, as it provides the basic code to develop a plugin.
                     The sample plugin in this repository shows how to create a new Field type (Seed) in the Builder and to display it in the Previewer tool.
-                    Make sure in package.json you are importing the latest version of @dontcode/core, @dontcode/plugin-common and @dontcode/sandbox and run npm install.
+                    Make sure in <b>package.json</b> you are importing the latest version of <b>@dontcode/core</b>, <b>@dontcode/plugin-common</b> and <b>@dontcode/sandbox</b> and run <b>npm install</b.
                   </li>
                   <li>In your new repository, remove all reference to Seed in the source code, and change it to your plugin name (let's say plugin-doc)
                     <ol>
-                      <li>That includes, renaming files like plugin-seed.iml to plugin-doc.iml.</li>
-                      <li>Then you rename your plugin library using nx commands: nx g move --project seed doc</li>.
-                      <li>Some other config files will have to be modified as well, for example, in libs/doc/package.json, the library name should be @dontcode/plugin-doc and not @dontcode/doc</li>
+                      <li>That includes, renaming files like <b>plugin-seed.iml</b> to <b>plugin-doc.iml</b>.</li>
+                      <li>Then you rename your plugin library using nx commands: <b>nx g move --project seed doc</b></li>.
+                      <li>Some other config files will have to be modified as well, for example, in <b>libs/doc/package.json</b>, the library name should be <b>@dontcode/plugin-doc</b> and not @dontcode/doc</li>
                     </ol>
                   </li>
                   <li>Then you want to rename some classes to suit better your plugin name. In libs/report/src/lib, you'll have to modify:
                       <ol>
-                        <li>First, the declaration/seed-plugin.ts file should be renamed to doc-plugin.ts,</li>
-                        <li>And inside doc-plugin.ts, rename all references, Ids and Sources containing seed to ones with doc</li>
-                        <li>Then all files in seed-field and seeded-entity themselves. In the component classes, you must change the selectors from dontcode-seed-xxx to dontcode-doc-xxxxx</li>
-                        <li>In report.module.ts, change the module-id from dontcode-plugin/seed to dontcode-plugin/doc.</li>
-                        <li>Then plugin-tester/src/assets/dev/template.json, rename the seed field names to doc.</li>
-                        <li>And the cypress test file apps/plugin-tester-e2e/sec/integration/seed.spec.ts should be switched to a better name.</li>
+                        <li>First, the <b>declaration/seed-plugin.ts</b> file should be renamed to <b>doc-plugin.ts</b>,</li>
+                        <li>And inside <b>doc-plugin.ts</b>, rename all references, Ids and Sources containing seed to ones with doc</li>
+                        <li>Then all files in <b>seed-field</b> and <b>seeded-entity</b> directories. In the component classes, you must change the selectors from dontcode-seed-xxx to dontcode-doc-xxxxx</li>
+                        <li>In <b>report.module.ts</b>, change the module-id from <b>dontcode-plugin/seed</b> to <b>dontcode-plugin/doc</b>.</li>
+                        <li>Then in <b>plugin-tester/src/assets/dev/template.json</b>, rename the seed field names to doc.</li>
+                        <li>And the cypress test file <b>apps/plugin-tester-e2e/sec/integration/seed.spec.ts</b> should be switched to a better name.</li>
                       </ol>
                   </li>
                   <li>After all these changes, you should have a working plugin that you can test:
                     <ol>
-                      <li>nx run doc:test command should run jest tests successfully</li>
-                      <li>nx run plugin-tester-e2e:e2e should run Cypress tests successfully</li>
-                      <li>nx run plugin-tester:serve:development should run the application successfully, with the plugin loaded</li>
+                      <li><b>nx run doc:test</b> command should run jest tests successfully</li>
+                      <li><b>nx run plugin-tester-e2e:e2e</b> should run Cypress tests successfully</li>
+                      <li><b>nx run plugin-tester:serve:development</b> should run the application successfully, with the plugin loaded</li>
                       <li>Fix any error that can occur before continuing.</li>
                     </ol>
                   </li>
