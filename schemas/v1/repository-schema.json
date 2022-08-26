@@ -33,7 +33,7 @@
           "type": "string"
         },
         "info": {
-            "$refs": "#/$defs/plugin-info"
+          "$refs": "#/$defs/plugin-info"
         },
         "config": {
           "$refs": "#/$defs/plugin-config"
@@ -44,9 +44,6 @@
       "type": "object",
       "properties": {
         "exposed-module": {
-          "type": "string"
-        },
-        "module-name": {
           "type": "string"
         },
         "remote-entry": {
