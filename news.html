@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--  
+    <!--
     Document Title
     =============================================
     -->
@@ -27,7 +27,7 @@
     <!--
     Stylesheets
     =============================================
-    
+
     -->
     <!-- Default stylesheets-->
     <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -101,14 +101,30 @@
                 <div class="row post-masonry post-columns">
                   <div class="col-md-6 col-lg-6">
                     <div class="post">
-                      <div class="post-thumbnail"></div>
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/plugins/plugin-report-pie-bar.png" alt="Pie and Bar charts"/></a></div>
+                      <div class="post-header font-alt">
+                        <h2 class="post-title"><a href="#">Reports are available</a></h2>
+                        <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 19th of September 2022
+                        </div>
+                      </div>
+                      <div class="post-entry">
+                        <p>After a demand from one of our customer, we developed a plugin enabling you to easily generates charts based on your data. It is based on <a href="https://www.chartjs.org"><img src="https://www.chartjs.org/img/chartjs-logo.svg" width="40" /> Chart.js</a> as provided by <a href="https://primefaces.org">PrimeNG components.</a> </p>
+                        <p>As for other plugins, you just need to configure the graphs needed in the Builder.</p>
+                        <p>We developed <a href="https://www.npmjs.com/package/chartjs-adapter-date-std">a chartjs plugin</a> to support date format without dependencies to any javascript date libraries by the way.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="post">
+                      <div class="post-thumbnail"><a href="#"><img src="assets/images/news/automated-release-build.png" alt="Github release"/></a></div>
                       <div class="post-header font-alt">
                         <h2 class="post-title"><a href="#">Automated releases</a></h2>
                         <div class="post-meta">By&nbsp;<a href="#">Dont-code team</a>&nbsp;| 9th of August 2022
                         </div>
                       </div>
                       <div class="post-entry">
-                        <p>Now the release of Dont-code is completely automatized...</p>
+                        <p>Now the release of Dont-code is completely automatized thanks to Github Actions.</p>
+                        <p>All the core and plugins components are built, tested against each other, and deployed <a href="https://github.com/dont-code/release/tree/main/.github/workflows">in one script</a>.</p>
                       </div>
                     </div>
                   </div>
@@ -744,7 +760,7 @@ if (value) {
       </div>
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
     </main>
-    <!--  
+    <!--
     JavaScripts
     =============================================
     -->
