@@ -33,7 +33,7 @@
           "type": "string"
         },
         "info": {
-          "$refs": "#/$defs/plugin-info"
+            "$refs": "#/$defs/plugin-info"
         },
         "config": {
           "$refs": "#/$defs/plugin-config"
