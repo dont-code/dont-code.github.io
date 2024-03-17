@@ -28,7 +28,7 @@
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
-        var u="//shared.collin.best/matomo/";
+        var u="//collinfr.net/matomo/";
         _paq.push(['setTrackerUrl', u+'matomo.php']);
         _paq.push(['setSiteId', '1']);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
@@ -110,6 +110,64 @@
         </section>
         <section class="module">
           <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="font-alt mb-0">Main concepts</h2>
+                <hr class="divider-w mt-10 mb-20">
+                <p>How Dont-code is bringing value.</p>
+                Data model is dynamic, let's see with an example
+                <ul>
+                  <li>Data is dynamic
+                  </li>
+                  <li>Model of data is dynamic
+                  </li>
+                  <li>Meta-model of data is dynamic, as it can be modified by plugin
+                  </li>
+                </ul>
+                Plugin system supports 3 types of plugins
+                <ul>
+                  <li>Type Plugin
+                  </li>
+                  <li>Component Plugin
+                  </li>
+                  <li>Service Plugin
+                  </li>
+                  <li>Soon: Workflow Plugin
+                  </li>
+                </ul>
+                Adaptation is at the core thanks to repositories
+                <ul>
+                  <li>Plugins list
+                  </li>
+                  <li>Plugins customization
+                  </li>
+                  <li>Url customization
+                  </li>
+                </ul>
+                Current needs
+                <ul>
+                  <li>End 2 end tests environment: Creates new projects on the fly, add data. Can be reset at any time
+                  </li>
+                  <li>Demo environment: Template projects + new projects, specific set of data, use "stable" version of libs
+                  </li>
+                  <li>Family Next environment: Family's projects, however can reach production data (for ease of testing). Use "next" version of libs
+                  </li>
+                  <li>Family environment: Specific url for ide/builder and apps.
+                  </li>
+                </ul>
+                Installed Setup
+                <table>
+                  <thead>
+                    <th>Environment</th><th>Website</th><th>Repository</th><th>Plugins</th><th>Services</th><th>Databases</th></thead>
+                  <tbody>
+                    <tr>End 2 end test</tr><tr>Github Actions</tr><tr>assets/repositories/next.json</tr><tr>https://dont-code.net/plugins/next</tr><tr>https://test.dont-code.net/project/e2e</tr><tr>dontCodeE2EProjects, dontCodeE2EData</tr>
+                    <tr>Demo Environment</tr><tr>https://dont-code.net/ide-ui/latest</tr><tr>https://dont-code.net/repositories/demo-dont-code-repository.json</tr><tr>https://dont-code.net/plugins/latest</tr><tr>https://test.dont-code.net/project/demo</tr><tr>dontCodeDemoProjects, dontCodeDemoData</tr>
+                    <tr>Family Next Environment</tr><tr>https://dont-code.net/preview-ui/next</tr><tr>https://dont-code.net/repositories/next-dont-code-repository.json</tr><tr>https://dont-code.net/plugins/next</tr><tr>https://test.dont-code.net/project/family</tr><tr>dontCodeFamilyProjects, dontCodeFamilyData</tr>
+                    <tr>Family Environment</tr><tr>https://dont-code.net/ide-ui/latest</tr><tr>https://dont-code.net/repositories/latest-dont-code-repository.json</tr><tr>https://dont-code.net/plugins/latest</tr><tr>https://test.dont-code.net/project/family</tr><tr>dontCodeFamilyProjects, dontCodeFamilyData</tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <div class="row">
               <div class="col-sm-12">
                 <h2 class="font-alt mb-0">Starting a new Plugin</h2>
