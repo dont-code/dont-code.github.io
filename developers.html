@@ -112,7 +112,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12">
-                <h2 class="font-alt mb-0">Main concepts</h2>
+                <h2 class="font-alt mb-0">Main concepts (Draft)</h2>
                 <hr class="divider-w mt-10 mb-20">
                 <p>How Dont-code is bringing value.</p>
                 Data model is dynamic, let's see with an example
@@ -144,33 +144,33 @@
                   <li>Url customization
                   </li>
                 </ul>
-                Current needs
+                Available Environments
                 <ul>
                   <li>End 2 end tests environment: Creates new projects on the fly, add data. Can be reset at any time
                   </li>
                   <li>Demo environment: Template projects + new projects, specific set of data, use "stable" version of libs
                   </li>
-                  <li>Family Next environment: Family's projects, however can reach production data (for ease of testing). Use "next" version of libs
+                  <li>Company environment: Production Environment (apps & database) specific for a company. 
                   </li>
-                  <li>Family environment: Specific url for ide/builder and apps.
+                  <li>Company Next environment: Same but using Next (less stable) versions of components and plugins. Uses same database than Company environment.
                   </li>
                 </ul>
-                Installed Setup
+                Installed Setup Details
                 <table>
                   <thead>
                     <th>Environment</th><th>Website</th><th>Repository</th><th>Plugins</th><th>Services</th><th>Databases</th></thead>
                   <tbody>
-                    <tr>End 2 end test</tr><tr>Github Actions</tr><tr>assets/repositories/next.json</tr><tr>https://dont-code.net/plugins/next</tr><tr>https://test.dont-code.net/project/e2e</tr><tr>dontCodeE2EProjects, dontCodeE2EData</tr>
-                    <tr>Demo Environment</tr><tr>https://dont-code.net/ide-ui/latest</tr><tr>https://dont-code.net/repositories/demo-dont-code-repository.json</tr><tr>https://dont-code.net/plugins/latest</tr><tr>https://test.dont-code.net/project/demo</tr><tr>dontCodeDemoProjects, dontCodeDemoData</tr>
-                    <tr>Family Next Environment</tr><tr>https://dont-code.net/preview-ui/next</tr><tr>https://dont-code.net/repositories/next-dont-code-repository.json</tr><tr>https://dont-code.net/plugins/next</tr><tr>https://test.dont-code.net/project/family</tr><tr>dontCodeFamilyProjects, dontCodeFamilyData</tr>
-                    <tr>Family Environment</tr><tr>https://dont-code.net/ide-ui/latest</tr><tr>https://dont-code.net/repositories/latest-dont-code-repository.json</tr><tr>https://dont-code.net/plugins/latest</tr><tr>https://test.dont-code.net/project/family</tr><tr>dontCodeFamilyProjects, dontCodeFamilyData</tr>
+                    <tr>End 2 end test</tr><tr>Github Actions</tr><tr>https://test.dont-code.net/e2e/repository-stable.json</tr><tr>https://dont-code.net/plugins/next</tr><tr>https://test.dont-code.net/e2e/project</tr><tr>dontCodeE2eProjects, dontCodeE2eData</tr>
+                    <tr>Demo Environment</tr><tr>https://dont-code.net/ide-ui/latest</tr><tr>https://test.dont-code.net/demo/repository-stable.json</tr><tr>https://dont-code.net/plugins/latest</tr><tr>https://test.dont-code.net/demo/project</tr><tr>dontCodeDemoProjects, dontCodeDemoData</tr>
+                    <tr>Company Environment</tr><tr>https://dont-code.net/ide-ui/latest</tr><tr>https://company-xyz.net/dont-code/repository-stable.json</tr><tr>https://dont-code.net/plugins/latest</tr><tr>https://company-xyz.net/dont-code/project</tr><tr>dontCodeCompanyXyzProjects, dontCodeCompanyXyzData</tr>
+                    <tr>Company Next Environment</tr><tr>https://dont-code.net/ide-ui/next</tr><tr>https://company-xyz.net/dont-code/repository-next.json</tr><tr>https://dont-code.net/plugins/next</tr><tr>https://company-xyz.net/dont-code/project</tr><tr>dontCodeCompanyXyzProjects, dontCodeCompanyXyzData</tr>
                   </tbody>
                 </table>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
-                <h2 class="font-alt mb-0">Starting a new Plugin</h2>
+                <h2 class="font-alt mb-0">Developing a new Plugin</h2>
                 <hr class="divider-w mt-10 mb-20">
                 <p>Steps to develop a new Plugin for the Dont-code Platform [Github](https://github.com/dont-code).</p>
                 <ul>
